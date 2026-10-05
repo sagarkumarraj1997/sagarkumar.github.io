@@ -47,7 +47,7 @@ class App {
     const hash = (window.location.hash || '').replace(/^#\/?/, '');
     const parts = hash.split('/').filter(Boolean);
     const validPages = ['about', 'research', 'projects', 'publications', 'teaching', 'contact'];
-    
+
     if (parts.length === 0 || !validPages.includes(parts[0])) {
       return { page: 'home', slug: null };
     }
@@ -213,13 +213,10 @@ class App {
         <div class="content-wrap hero-grid">
           <div class="hero-left">
             <div data-reveal="0">
-              <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
-                <img src="assets/sagar.png" alt="Sagar Kumar" style="width: 58px; height: 58px; object-fit: cover; border: 2px solid var(--color-accent); display: block;" loading="eager" fetchpriority="high">
-                <div class="hero-tags" style="margin-bottom: 0;">
-                  <span class="tag tag-outline">Assistant Professor</span>
-                  <span class="tag tag-neutral">Researcher</span>
-                  <span class="tag tag-neutral">Founder &amp; CEO, Kosmatron</span>
-                </div>
+              <div class="hero-tags">
+                <span class="tag tag-outline">Assistant Professor</span>
+                <span class="tag tag-neutral">Researcher</span>
+                <span class="tag tag-neutral">Founder &amp; CEO, Kosmatron</span>
               </div>
               <h1 id="h-home" class="hero-title">Sagar<br>Kumar<span class="dot">.</span></h1>
             </div>
@@ -308,13 +305,13 @@ class App {
       </section>
     `;
   }
-  attachHomeEvents() {}
+  attachHomeEvents() { }
 
   /* ==========================================================================
      View: ABOUT
      ========================================================================== */
   renderAboutView() {
-    const filteredTimeline = TIMELINE.filter(t => 
+    const filteredTimeline = TIMELINE.filter(t =>
       this.state.timelineFilter === 'all' || t.kind === this.state.timelineFilter
     );
 
@@ -322,7 +319,7 @@ class App {
       const tagClass = t.kind === 'education' ? 'tag-neutral' : t.kind === 'venture' ? 'tag-outline' : 'tag-accent';
       const kindLabel = t.kind.charAt(0).toUpperCase() + t.kind.slice(1);
       const isPresent = /Present/.test(t.range);
-      const pointsHtml = t.points.length > 0 
+      const pointsHtml = t.points.length > 0
         ? `<ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 0.95rem; color: var(--color-neutral-900);">
             ${t.points.map(p => `<li>${p}</li>`).join('')}
            </ul>`
@@ -656,7 +653,7 @@ class App {
      View: PROJECTS
      ========================================================================== */
   renderProjectsView() {
-    const filteredProjects = PROJECTS.filter(p => 
+    const filteredProjects = PROJECTS.filter(p =>
       this.state.projectFilter === 'all' || p.cat === this.state.projectFilter
     );
 
@@ -849,13 +846,13 @@ class App {
       </nav>
     `;
   }
-  attachProjectDetailEvents() {}
+  attachProjectDetailEvents() { }
 
   /* ==========================================================================
      View: PUBLICATIONS
      ========================================================================== */
   renderPublicationsView() {
-    const filteredPubs = PUBS.filter(p => 
+    const filteredPubs = PUBS.filter(p =>
       this.state.pubFilter === 'all' || p.f === this.state.pubFilter
     );
 
