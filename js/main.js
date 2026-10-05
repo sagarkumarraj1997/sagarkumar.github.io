@@ -1322,7 +1322,7 @@ class App {
         if (entry.isIntersecting) {
           const el = entry.target;
           const delay = parseInt(el.getAttribute('data-reveal'), 10) || 0;
-          el.style.transition = 'opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1)';
+          el.style.transition = 'opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1)';
           el.style.transitionDelay = `${delay}ms`;
           el.style.opacity = '1';
           el.style.transform = 'none';
@@ -1330,12 +1330,19 @@ class App {
           observer.unobserve(el);
         }
       });
-    }, { rootMargin: '0px 0px -40px 0px' });
+    }, { rootMargin: '60px 0px' });
 
     elements.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(24px)';
-      observer.observe(el);
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight + 60 && rect.bottom > -60) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        el.setAttribute('data-revealed', 'true');
+      } else {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(16px)';
+        observer.observe(el);
+      }
     });
   }
 }
