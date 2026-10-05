@@ -213,10 +213,13 @@ class App {
         <div class="content-wrap hero-grid">
           <div class="hero-left">
             <div data-reveal="0">
-              <div class="hero-tags">
-                <span class="tag tag-outline">Assistant Professor</span>
-                <span class="tag tag-neutral">Researcher</span>
-                <span class="tag tag-neutral">Founder &amp; CEO, Kosmatron</span>
+              <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                <img src="assets/sagar.png" alt="Sagar Kumar" style="width: 58px; height: 58px; object-fit: cover; border: 2px solid var(--color-accent); display: block;" loading="eager" fetchpriority="high">
+                <div class="hero-tags" style="margin-bottom: 0;">
+                  <span class="tag tag-outline">Assistant Professor</span>
+                  <span class="tag tag-neutral">Researcher</span>
+                  <span class="tag tag-neutral">Founder &amp; CEO, Kosmatron</span>
+                </div>
               </div>
               <h1 id="h-home" class="hero-title">Sagar<br>Kumar<span class="dot">.</span></h1>
             </div>
@@ -398,11 +401,11 @@ class App {
       <!-- Biography -->
       <section style="padding: clamp(48px, 6vw, 88px) 0;">
         <div class="content-wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: clamp(32px, 5vw, 72px);">
-          <div data-reveal="0">
-            <div style="aspect-ratio: 4/5; width: 100%; max-width: 440px; background: var(--color-surface); border: 2px solid var(--color-divider); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px;">
-              ${renderSvg('orbital', { seed: 9 })}
-              <div style="font-size: 13px; font-weight: 700; margin-top: 14px; color: var(--color-neutral-700);">Sagar Kumar — Poornima University</div>
+          <div>
+            <div style="width: 100%; max-width: 440px; border: 2px solid var(--color-divider); overflow: hidden; background: var(--color-surface); box-shadow: var(--shadow-sm);">
+              <img src="assets/sagar.png" alt="Sagar Kumar — Assistant Professor &amp; Researcher" style="width: 100%; height: auto; max-height: 540px; object-fit: cover; display: block;" loading="eager" fetchpriority="high">
             </div>
+            <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin-top: 10px; color: var(--color-neutral-700);">Sagar Kumar — Poornima University, Jaipur</div>
           </div>
           <div data-reveal="100" style="display: flex; flex-direction: column; gap: 20px; font-size: 1.1rem; line-height: 1.65;">
             <p style="font-size: clamp(20px, 2vw, 26px); font-weight: 700; line-height: 1.35; margin: 0;">
