@@ -399,7 +399,7 @@ class App {
       <section style="padding: clamp(48px, 6vw, 88px) 0;">
         <div class="content-wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: clamp(32px, 5vw, 72px);">
           <div>
-            <div style="width: 100%; max-width: 440px; border: 2px solid var(--color-divider); overflow: hidden; background: var(--color-surface); box-shadow: var(--shadow-sm);">
+            <div style="width: 100%; max-width: 440px; overflow: hidden; background: var(--color-surface); box-shadow: var(--shadow-sm);">
               <img src="assets/sagar.png" alt="Sagar Kumar — Assistant Professor &amp; Researcher" style="width: 100%; height: auto; max-height: 540px; object-fit: cover; display: block;" loading="eager" fetchpriority="high">
             </div>
             <div style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin-top: 10px; color: var(--color-neutral-700);">Sagar Kumar — Poornima University, Jaipur</div>
